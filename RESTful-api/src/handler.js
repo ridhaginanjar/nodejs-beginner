@@ -1,3 +1,4 @@
+const { nanoid } = require('nanoid');
 const notes = require('./notes.js');
 
 const addNoteHandler = (request, h) => {
