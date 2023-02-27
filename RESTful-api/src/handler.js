@@ -2,13 +2,13 @@ const { nanoid } = require('nanoid');
 const notes = require('./notes.js');
 
 const addNoteHandler = (request, h) => {
-    const { title,tag,body } = request.payload;
+    const { title,tags,body } = request.payload; //"tags" not "tag"
     const id = nanoid(16);
-    const createdAt = new Date().toISOString;
+    const createdAt = new Date().toISOString(); //".toISOString()" not ".toISOString"
     const updatedAt = createdAt;
 
     const newNote = {
-        title,tag,body,id,createdAt,updatedAt
+        title,tags,body,id,createdAt,updatedAt //"tags" not "tag"
     };
 
     notes.push(newNote);
@@ -38,4 +38,36 @@ const addNoteHandler = (request, h) => {
     return response;    
 };
 
-module.exports = { addNoteHandler };
+const getAllNotesHandler = () => ({
+    status: 'success',
+    data: {
+      notes,
+    },
+    //You don't have to include response.code(); because it's for show the data and not create data
+    // And return, because it's already return. Sedangkan yang fungsi getNotesByidHandler menggunakan if (kondisi) sehingga perlu return
+});
+
+const getNotesByidHandler = (request, h) => {
+    const { id } = request.params;
+
+    const note = notes.filter((note) => note.id === id)[0]; //Get Notes by ID
+
+    if(note != undefined) {
+        const response = h.response({
+            status: 'Success',
+            data: {
+                note //Disini gunakan "note" bukan "notes" karena sudah di filter by id
+            }
+        });
+        //You don't have to include response.code(); because it's for show the data and not create data
+        return response; //Always return in "Handler"
+    }
+    const response = h.response({
+        status: 'Fail',
+        message: 'Catatan Not Found',
+    });
+    response.code(404);
+    return response;
+};
+
+module.exports = { addNoteHandler, getAllNotesHandler, getNotesByidHandler};
