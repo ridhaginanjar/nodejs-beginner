@@ -7,7 +7,7 @@ This project is documentation for the implementation of Nodejs as Server-side de
 - nanoid for unique id
 
 # Course Note 
-## Step 1: add Note
+## Step 1: add Note (POST)
 - [server.js](server.js):
     - This file will create server
     - CORS (Cross-Origin Resource Sharing) will set in here
@@ -30,7 +30,7 @@ This means that, by default, web pages can only access resources (like images, s
 response.header('Access-Control-Allow-Origin', '*');
 ```
 
-## Step 2: show Notes
+## Step 2: Show Notes (GET)
 In this step, i also find some problem from previous step.
 I have resolved this problem and the comment with **//** in handler.js is debug code
 - [routes.js](routes.js):
@@ -43,7 +43,19 @@ I have resolved this problem and the comment with **//** in handler.js is debug 
     - create getNotesByidHandler to get notes by id. 
     It will return spesific notes, so i use filter method to filter notes by id.
 
+## Step 3: Edit Note (PUT)
+In this step, we will edit spesific note that filtered by id. 
+- [routes.js](routes.js):
+    - add PUT method
+    - add path to /notes/{id}
+    - add handler editNoteByidHandler
+- [handler.js](handler.js):
+    - create editNoteByidHandler to edit note by id.
+    First find id,title,tag,body by request.params/request.payload.
 
+    Find index, if index is -1 then it's fail and index != -1 is success.
+
+    
 
 # Full Course :
 - [Belajar Membuat Aplikasi Back-End untuk Pemula dengan Google Cloud](https://www.dicoding.com/academies/342)
