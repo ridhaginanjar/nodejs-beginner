@@ -55,7 +55,25 @@ In this step, we will edit spesific note that filtered by id.
 
     Find index, if index is -1 then it's fail and index != -1 is success.
 
-    
+## Step 4: Delete Note (DELETE)
+In this step, we will delete spesific note.
+- [routes.js](routes.js):
+    - add DELETE method
+    - add path to /notes/{id}
+    - add handler deleteNoteByidHandler
+- [handler.js](handler.js):
+    - create deleteNoteByidHandler to delete note by id
+    First find id and use :
+
+    ```
+    notes.splice(index,1)
+    ```
+    The code above means that we delete notes in "index", 1 items.
+
+# Note for all Step
+Don't forget to create response because we need alert that our action 
+is success or fail.
+
 
 # Full Course :
 - [Belajar Membuat Aplikasi Back-End untuk Pemula dengan Google Cloud](https://www.dicoding.com/academies/342)
