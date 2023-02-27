@@ -43,6 +43,37 @@ I have resolved this problem and the comment with **//** in handler.js is debug 
     - create getNotesByidHandler to get notes by id. 
     It will return spesific notes, so i use filter method to filter notes by id.
 
+There is another method to show data. In this step i just set:
+
+```
+data: {
+    notes
+},
+```
+
+But, you can use .map to iterate and select some spesific data:
+
+```
+const getAllNotesHandler = (request,h) => {
+    const response = h.response({
+        status: 'success',
+        data: {
+            notes: notes.map(({ id, title, tags, body, createdAt, updatedAt }) => ({
+                id,
+                title,
+                tags,
+                body,
+                createdAt,
+                updatedAt,
+            })),
+        },
+    });
+    response.code(200);
+    return response;
+};
+
+```
+
 ## Step 3: Edit Note (PUT)
 In this step, we will edit spesific note that filtered by id. 
 - [routes.js](routes.js):

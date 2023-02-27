@@ -41,7 +41,7 @@ const addNoteHandler = (request, h) => {
 const getAllNotesHandler = () => ({
     status: 'success',
     data: {
-      notes,
+      notes
     },
     //You don't have to include response.code(); because it's for show the data and not create data
     // And return, because it's already return. Sedangkan yang fungsi getNotesByidHandler menggunakan if (kondisi) sehingga perlu return
