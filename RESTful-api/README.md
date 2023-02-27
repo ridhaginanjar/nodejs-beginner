@@ -105,6 +105,71 @@ In this step, we will delete spesific note.
 Don't forget to create response because we need alert that our action 
 is success or fail.
 
+# Automation Testing with POSTMAN
+In this step, we will try to make API with POSTMAN and also doing automation testing.
+
+## POSTMAN Collection
+Collection in Postman is a group of API requests that are organized together for easier management and testing.
+
+Collections in Postman allow you to group together a set of API requests that are related to a specific API or project. For example, you might create a collection called "My API" that contains all of the API requests for a particular API that you are developing or testing.
+
+Here is the step of how to create collection:
+
+1. Create Collection
+
+![Create Collection](postman-images/create_collection.png)
+
+Here, you can select "Create a new Collection" OR "+" button on the top left (near of Collections button)
+
+2. Rename Collection
+
+![Rename Collection](postman-images/rename_collection.png)
+
+Right click on collection name and click Rename
+
+Here is the example of API Requests :
+
+![Example request](postman-images/example_request.png)
+
+Based on that request, here is the response.
+
+![Example response](postman-images/example_response.png)
+
+
+## POSTMAN Environment
+Environment in POSTMAN is a set of key-value pairs that allows you to manage variables used in your API requests and tests.
+
+An environment in Postman is like a container for a set of variables. You can create an environment for each of your APIs or projects, and use it to store variables that are specific to that API or project. Variables can be things like API keys, tokens, URLs, or any other values that you need to use in your requests.
+
+Here is the step of how to create Environment:
+
+1. Create Environment
+
+![Create Environment](postman-images/create_environment.png)
+
+Click "Environments" Button and click "Create a new Environment"
+
+2. Rename Environment
+
+![Rename Environment](postman-images/rename_environment.png)
+
+Write your own name of Environment
+
+3. Example Environment
+
+![Example Environment](postman-images/example_environment.png)
+
+Here is example of environment, in here we use "noteId" and we let it's null because we will 
+initiate it later after we "PUT" some data. So, it's not manually but automatically later
+
+4. Choose Environment
+In here, it's mean that which **collection** that we used to implement **this environment**.
+
+![Chose Environment](postman-images/chose_environment.png)
+
+Click the dropdown on the top of the right Environment table, and Click Save. 
+
+
 
 # Full Course :
 - [Belajar Membuat Aplikasi Back-End untuk Pemula dengan Google Cloud](https://www.dicoding.com/academies/342)
