@@ -167,9 +167,29 @@ In here, it's mean that which **collection** that we used to implement **this en
 
 ![Chose Environment](postman-images/chose_environment.png)
 
-Click the dropdown on the top of the right Environment table, and Click Save. 
+Click the dropdown on the top of the right Environment table, and Click Save.
 
+## Automation Testing Scenario
 
+This automation is used for create automatic testing. The purpose is our API's are match with the requirements.
+
+1. Add notes Scenario
+Here is the list of scenario testing :
+- Pastikan response memiliki status code 201.
+- Pastikan header response Content-Type memiliki nilai application/json.
+- Pastikan body response adalah object.
+- Pastikan body response memiliki properti dan nilai yang sesuai.
+- Pastikan data pada response body memiliki noteId dan nilainya tidak kosong.
+
+Find more about the command in [ThisFile](postman-command-automation/adding-notes-scenario.js)
+
+**NOTE:** This Automation is very tough, so that's why in the code I specify :
+
+```
+pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; charset=utf-8');
+```
+
+NOT, **application/json**
 
 # Full Course :
 - [Belajar Membuat Aplikasi Back-End untuk Pemula dengan Google Cloud](https://www.dicoding.com/academies/342)
