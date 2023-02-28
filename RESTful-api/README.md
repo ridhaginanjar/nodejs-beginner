@@ -181,7 +181,7 @@ Here is the list of scenario testing :
 - Pastikan body response memiliki properti dan nilai yang sesuai.
 - Pastikan data pada response body memiliki noteId dan nilainya tidak kosong.
 
-Find more about the command in [ThisFile](postman-command-automation/adding-notes-scenario.js)
+Find more about the command in [adding-notes-scenario.js](postman-command-automation/adding-notes-scenario.js)
 
 **NOTE:** This Automation is very tough, so that's why in the code I specify :
 
@@ -190,6 +190,27 @@ pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; 
 ```
 
 NOT, **application/json**
+
+2. Getting All Notes
+The scenario :
+- Pastikan response memiliki status code 200.
+- Pastikan header response Content-Type memiliki nilai application/json.
+- Pastikan body response adalah object.
+- Pastikan body response memiliki properti dan nilai atau tipe data yang sesuai.
+- Pastikan data pada response body memiliki array notes dan terdapat minimal 1 item di dalamnya.
+
+Find more about the command in [getall-notes-scenario.js](postman-command-automation/getall-notes-scenario.js)
+
+3. Get Specified Notes
+The scenario :
+- Pastikan response memiliki status code 200.
+- Pastikan header response Content-Type memiliki nilai application/json.
+- Pastikan body response merupakan object.
+- Pastikan body response memiliki properti dan nilai atau tipe data yang sesuai.
+- Pastikan data pada response body memiliki properti note yang merupakan sebuah objek.
+- Pastikan objek note di dalam data memiliki properti id, title, body, dan tags dengan nilai yang sesuai.
+
+Find more about the command in [getting-specified-notes-scenario.js](postman-command-automation/getting-specified-notes-scenario.js)
 
 # Full Course :
 - [Belajar Membuat Aplikasi Back-End untuk Pemula dengan Google Cloud](https://www.dicoding.com/academies/342)
