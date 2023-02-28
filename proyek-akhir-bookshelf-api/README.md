@@ -1,5 +1,5 @@
 # Bookshelf API Submission Documentation
-Submission criteria:
+## Submission criteria:
 1. Aplikasi menggunakan port 9000
 2. Aplikasi dijalankan dengan perintah npm run start
 
@@ -18,7 +18,7 @@ gunakan 'start-dev' untuk menggunakan nodemon.
 
 3. API dapat menyimpan buku (POST)
     - Method: POST
-    - url: /books
+    - URL: /books
     - body request:
         ```
         {
@@ -34,27 +34,30 @@ gunakan 'start-dev' untuk menggunakan nodemon.
         ```
 Objek buku yang ada pada server harus memiliki struktur seperti ini:
  
-        ```
-            {
-                "id": "Qbax5Oy7L8WKf74l",
-                "name": "Buku A",
-                "year": 2010,
-                "author": "John Doe",
-                "summary": "Lorem ipsum dolor sit amet",
-                "publisher": "Dicoding Indonesia",
-                "pageCount": 100,
-                "readPage": 25,
-                "finished": false,
-                "reading": false,
-                "insertedAt": "2021-03-04T09:11:44.598Z",
-                "updatedAt": "2021-03-04T09:11:44.598Z"
-            }
-        ```
+```
+    {
+        "id": "Qbax5Oy7L8WKf74l",
+        "name": "Buku A",
+        "year": 2010,
+        "author": "John Doe",
+        "summary": "Lorem ipsum dolor sit amet",
+        "publisher": "Dicoding Indonesia",
+        "pageCount": 100,
+        "readPage": 25,
+        "finished": false,
+        "reading": false,
+        "insertedAt": "2021-03-04T09:11:44.598Z",
+        "updatedAt": "2021-03-04T09:11:44.598Z"
+    }
+```
 **insertedAt,updatedAt,id,finished** didapat dari server.
         
 > Finished: readPage === pageCount.
+
 > insertedAt: new Date().toISOString()
+
 > id: nanoid
+
 > updatedAt: insertedAt
 
 - Server akan **gagal** bila:
@@ -76,7 +79,7 @@ Objek buku yang ada pada server harus memiliki struktur seperti ini:
             "message": "Gagal menambahkan buku. readPage tidak boleh lebih besar dari pageCount"
         }
         ```
-- Server berhasil:
+- Server **berhasil**:
     - Status Code: 201
     - Response Body:
     ```
@@ -134,7 +137,7 @@ Objek buku yang ada pada server harus memiliki struktur seperti ini:
 5. API dapat menampilkan detail buku (GET/id)
 - method: GET
 - path: /books/{bookId}
-- IF book **not** found:
+- IF book **NOT** found:
     - Status Code: 404
     - response body:
     ```
@@ -224,7 +227,7 @@ Objek buku yang ada pada server harus memiliki struktur seperti ini:
 
 7. API dapat menghapus Buku (DELETE/id)
 - method: DELETE
-- Url: /books/{bookId}
+- URL: /books/{bookId}
 - If **Gagal** (id not found):
     - Status Code: 404
     - Response Body:
