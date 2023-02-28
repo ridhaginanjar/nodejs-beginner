@@ -267,8 +267,26 @@ npx eslint
 - Pastikan Anda hapus dulu berkas node_modules pada folder proyek sebelum mengkompresi dalam bentuk ZIP.
 
 ## Submission notes:
-1. Module Requirement:
+1. Module Requirements:
     - nodemon (Just for Development)
     - eslint (Mandatory for 5 Star)
     - nanoid (Mandatory for id)
     - [Postman-Collection-and-Env](https://github.com/dicodingacademy/a261-backend-pemula-labs/raw/099-shared-files/BookshelfAPITestCollectionAndEnvironment.zip)
+
+2. Initiate:
+    - Install **requirements**
+    - Import [Postman-Collection-and-Env](BookshelfAPITestCollectionAndEnvironment) to POSTMAN ENV and Collection
+    - Create .gitignore for **node_modules**
+    - Create Project file. Folder Structure will look like this:
+        ├── BookshelfAPITestCollectionAndEnvironment
+        ├── node_modules
+        ├── src
+        │   ├── **books.js**
+        │   ├── **handler.js**
+        │   ├── **routes.js**
+        │   ├── **server.js**
+        ├── .eslintrc.json
+        ├── .gitignore
+        ├── package.json
+        ├── package-lock.json 
+        └── README.md
