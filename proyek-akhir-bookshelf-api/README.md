@@ -269,6 +269,6 @@ npx eslint
 ## Submission notes:
 1. Module Requirement:
     - nodemon (Just for Development)
-    - exlint (Mandatory for 5 Star)
+    - eslint (Mandatory for 5 Star)
     - nanoid (Mandatory for id)
     - [Postman-Collection-and-Env](https://github.com/dicodingacademy/a261-backend-pemula-labs/raw/099-shared-files/BookshelfAPITestCollectionAndEnvironment.zip)
