@@ -174,7 +174,7 @@ Click the dropdown on the top of the right Environment table, and Click Save.
 This automation is used for create automatic testing. The purpose is our API's are match with the requirements.
 
 1. Add notes Scenario
-Here is the list of scenario testing :
+Here is the list of scenario testing:
 - Pastikan response memiliki status code 201.
 - Pastikan header response Content-Type memiliki nilai application/json.
 - Pastikan body response adalah object.
@@ -192,7 +192,7 @@ pm.expect(pm.response.headers.get('Content-Type')).to.equals('application/json; 
 NOT, **application/json**
 
 2. Getting All Notes
-The scenario :
+The scenario:
 - Pastikan response memiliki status code 200.
 - Pastikan header response Content-Type memiliki nilai application/json.
 - Pastikan body response adalah object.
@@ -202,7 +202,7 @@ The scenario :
 Find more about the command in [getall-notes-scenario.js](postman-command-automation/getall-notes-scenario.js)
 
 3. Get Specified Notes
-The scenario :
+The scenario:
 - Pastikan response memiliki status code 200.
 - Pastikan header response Content-Type memiliki nilai application/json.
 - Pastikan body response merupakan object.
@@ -211,6 +211,26 @@ The scenario :
 - Pastikan objek note di dalam data memiliki properti id, title, body, dan tags dengan nilai yang sesuai.
 
 Find more about the command in [getting-specified-notes-scenario.js](postman-command-automation/getting-specified-notes-scenario.js)
+
+4. Update Specified Note
+The Scenario:
+- Pastikan response memiliki status code 200.
+- Pastikan header response Content-Type memiliki nilai application/json.
+- Pastikan body response adalah object.
+- Pastikan body response memiliki properti dan nilai yang sesuai.
+- Ketika mengakses catatan yang diperbaharui, pastikan catatan yang diperbarui memiliki nilai terbaru.
+
+Find more about the command in [update-specified-notes-scenario.js](postman-command-automation/update-specified-notes-scenario.js)
+
+5. Delete Specified Note
+The scenario:
+- Pastikan response memiliki status code 200.
+- Pastikan header response Content-Type memiliki nilai application/json.
+- Pastikan body response adalah object.
+- Pastikan body response memiliki properti dan nilai yang sesuai.
+    - Ketika mengakses catatan yang dihapus, pastikan catatan yang dihapus tidak ditemukan.
+
+Find more about the command in [delete-specified-notes-scenario.js](postman-command-automation/delete-specified-notes-scenario.js)
 
 # Full Course :
 - [Belajar Membuat Aplikasi Back-End untuk Pemula dengan Google Cloud](https://www.dicoding.com/academies/342)

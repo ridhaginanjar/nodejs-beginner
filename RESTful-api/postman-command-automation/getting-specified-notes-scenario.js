@@ -22,6 +22,7 @@ pm.test('response status code should have 200 value', () => {
   
   pm.test('response body data should contain note object', () => {
      const responseJson = pm.response.json();
+     // Here is get PROPERTY "note" in "data"
      const { data } = responseJson;
    
      pm.expect(data).to.have.ownProperty('note');
@@ -30,12 +31,15 @@ pm.test('response status code should have 200 value', () => {
   
   pm.test('note object should contain correct value for id, title, body, and tags property', () => {
      const responseJson = pm.response.json();
+    // Here is get OBJECT "note" in "data"
      const { data: { note } } = responseJson;
+
      const expectedId = pm.environment.get('noteId');
      const expectedTitle = 'Catatan A';
      const expectedTags = ['Android', 'Web'];
      const expectedBody = 'Isi dari catatan A';
      pm.expect(note).to.have.ownProperty('id');
+
      pm.expect(note.id).to.equals(expectedId);
      pm.expect(note).to.have.ownProperty('title');
      pm.expect(note.title).to.equals(expectedTitle);
