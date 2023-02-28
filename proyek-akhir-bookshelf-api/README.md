@@ -278,15 +278,17 @@ npx eslint
     - Import [Postman-Collection-and-Env](BookshelfAPITestCollectionAndEnvironment) to POSTMAN ENV and Collection
     - Create .gitignore for **node_modules**
     - Create Project file. Folder Structure will look like this:
+    ```
         ├── BookshelfAPITestCollectionAndEnvironment
         ├── node_modules
         ├── src
-        │   ├── **books.js**
-        │   ├── **handler.js**
-        │   ├── **routes.js**
-        │   ├── **server.js**
+        │   ├── books.js
+        │   ├── handler.js
+        │   ├── routes.js
+        │   ├── server.js
         ├── .eslintrc.json
         ├── .gitignore
         ├── package.json
         ├── package-lock.json 
         └── README.md
+    ```
