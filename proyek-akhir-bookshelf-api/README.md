@@ -1,4 +1,7 @@
 # Bookshelf API Submission Documentation
+- Navigation:
+    - [Submission Criteria](#submission-criteria)
+
 ## Submission criteria:
 1. Aplikasi menggunakan port 9000
 2. Aplikasi dijalankan dengan perintah npm run start
