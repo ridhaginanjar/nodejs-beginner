@@ -268,9 +268,10 @@ npx eslint
 
 ## Submission notes:
 1. Module Requirements:
+    - Hapi Framework
     - nodemon (Just for Development)
     - eslint (Mandatory for 5 Star)
-    - nanoid (Mandatory for id)
+    - nanoid v3.x.x (Mandatory for id)
     - [Postman-Collection-and-Env](https://github.com/dicodingacademy/a261-backend-pemula-labs/raw/099-shared-files/BookshelfAPITestCollectionAndEnvironment.zip)
 
 2. Initiate:
