@@ -266,6 +266,8 @@ npx eslint
 - Pastikan di dalam folder proyek yang Anda kirim terdapat berkas package.json.
 - Pastikan Anda hapus dulu berkas node_modules pada folder proyek sebelum mengkompresi dalam bentuk ZIP.
 
+[Back to the top](#bookshelf-api-submission-documentation)
+
 ## Submission notes:
 1. Module Requirements:
     - Hapi Framework
@@ -293,3 +295,36 @@ npx eslint
         ├── package-lock.json 
         └── README.md
     ```
+
+3. Progress Documentation
+
+### Step 1: Add Book (POST)
+- Project File:
+    - [server.js](server.js):
+    - This file will create server by Hapi Framework
+    - Using port 9000
+    - Need variable called routes from [routes.js](routes.js)
+    - [routes.js](routes.js):
+        - This file will create routes that needed for [server.js](server.js)
+        - Need variable called addBooksHandler from [handler.js](handler.js)
+    - [handler.js](handler.js):
+        - This file will store all of handler (A handler is a function that is called whenever a specific route is requested. It is **responsible for handling the request and returning a response.**)
+        - All of handler in this file will be export to [routes.js](routes.js)
+        - Need variable called books from [books.js](books.js) because it's for save books
+    - [books.js](books.js):
+        - This file will store all of books that has been added in Array
+
+    **NOTE:** 
+    - In addBooksHandler:
+        - Get data from request first,
+        - Then, Initiate Data,
+        - Make sure to check request data first (request.payload),
+        - initiate another variable,
+        - Create Response Fail with The condition of **Fail Request: Readpage>pageCount & name not found**,
+
+        > If you want to check failed, **First** check request and **Second** check data, and so on.
+
+        - Check Success Response,
+        - Exports handler
+
+
