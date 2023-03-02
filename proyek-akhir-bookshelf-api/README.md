@@ -301,9 +301,9 @@ npx eslint
 ### Step 1: Add Book (POST)
 - Project File:
     - [server.js](server.js):
-    - This file will create server by Hapi Framework
-    - Using port 9000
-    - Need variable called routes from [routes.js](routes.js)
+        - This file will create server by Hapi Framework
+        - Using port 9000
+        - Need variable called routes from [routes.js](routes.js)
     - [routes.js](routes.js):
         - This file will create routes that needed for [server.js](server.js)
         - Need variable called addBooksHandler from [handler.js](handler.js)
