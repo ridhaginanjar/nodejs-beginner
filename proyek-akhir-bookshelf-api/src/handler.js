@@ -15,7 +15,7 @@ const addBooksHandler = (request, h) => {
         6. publisher
         7. pageCount
         8. readPage
-        9. finished = pageCound === readPage
+        9. finished = pageCount === readPage
         10. insertedAt = -> by Server
         11. updatedAt = insertedAt
 
@@ -98,7 +98,7 @@ const getAllBooksHandler = (request, h) => {
   const {
     name,
     reading,
-    finsihed,
+    finished,
   } = request.query;
 
   let filteredBooks = books;
@@ -107,11 +107,13 @@ const getAllBooksHandler = (request, h) => {
     filteredBooks = books.filter((book) => book.name.toLowerCase()
       .includes(name.toLowerCase()));
   }
+  if (reading !== undefined) {
+    filteredBooks = books.filter((book) => Boolean(book.reading));
+  }
 
   const response = h.response({
     status: 'success',
     data: {
-      // eslint-disable-next-line no-undef
       books: filteredBooks.map((book) => ({
         id: book.id,
         name: book.name,
