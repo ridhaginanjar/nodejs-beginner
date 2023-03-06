@@ -95,10 +95,24 @@ const addBooksHandler = (request, h) => {
 };
 
 const getAllBooksHandler = (request, h) => {
+  const {
+    name,
+    reading,
+    finsihed,
+  } = request.query;
+
+  let filteredBooks = books;
+
+  if (name !== undefined) {
+    filteredBooks = books.filter((book) => book.name.toLowerCase()
+      .includes(name.toLowerCase()));
+  }
+
   const response = h.response({
     status: 'success',
     data: {
-      books: books.map((book) => ({
+      // eslint-disable-next-line no-undef
+      books: filteredBooks.map((book) => ({
         id: book.id,
         name: book.name,
         publisher: book.publisher,
