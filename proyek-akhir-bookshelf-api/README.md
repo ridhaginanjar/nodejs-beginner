@@ -300,18 +300,18 @@ npx eslint
 
 ### Step 1: Add Book (POST)
 - Project File:
-    - [server.js](server.js):
+    - [server.js](src/server.js):
         - This file will create server by Hapi Framework
         - Using port 9000
         - Need variable called routes from [routes.js](routes.js)
-    - [routes.js](routes.js):
+    - [routes.js](src/routes.js):
         - This file will create routes that needed for [server.js](server.js)
         - Need variable called addBooksHandler from [handler.js](handler.js)
-    - [handler.js](handler.js):
+    - [handler.js](src/handler.js):
         - This file will store all of handler (A handler is a function that is called whenever a specific route is requested. It is **responsible for handling the request and returning a response.**)
         - All of handler in this file will be export to [routes.js](routes.js)
         - Need variable called books from [books.js](books.js) because it's for save books
-    - [books.js](books.js):
+    - [books.js](src/books.js):
         - This file will store all of books that has been added in Array
 
     **NOTE:** 
@@ -327,4 +327,90 @@ npx eslint
         - Check Success Response,
         - Exports handler
 
+### Step 2: Show All Book (GET)
+- Project File:
+    - [handler.js](src/handler.js):
+        - Create getAllBookshandler for get all book data
+    - [routes.js](src/routes.js):
+        - Create routes for getAllBookshandler
 
+    **NOTE:**
+    - In getAllBookshandler:
+        - Use .map() to show **several data**
+
+    > Why not **.filter()** ? Because filter is Show ALL Data that pass the "Filter Requirements".
+    > In the other side, **.map()** is show **Some data** that we choose. Like in this case is id, name, publisher.
+
+### Step 3: Show Detail Book (GET/{id})
+- Project File:
+    - [handler.js](src/handler.js):
+        - Create getBookbyIdHandler for get detail book data
+    - [routes.js](src/routes.js):
+        - Create routes for getBookbyIdHandler
+
+    **NOTE:**
+    - In getBookbyIdhandler:
+        - Use **find** index to get **books data by id**
+
+### Step 4: Update Book (POST/{id})
+- Project File:
+    - [handler.js](src/handler.js):
+        - Create updateBookHandler for update data
+    - [routes.js](src/routes.js):
+        - Create routes for updateBookHandler
+
+    **NOTE:**
+    - In updateBookHandler:
+        - **fail response (name, readpage > pageCount)** is placed after get **request.payload** because it's **has to validate the data** before the next step.
+        - use **find** *index* to get specified Book by id -> return index != 0
+        - find **books[index]** 
+
+### Step 5: Delete Book (Delete/)
+- Project File:
+    - [handler.js](src/handler.js):
+        - Create deleteBookHandler for delete data
+    - [routes.js](src/routes.js):
+        - Create routes for deleteBookHandler
+    
+    **NOTE:**
+    - in deleteBookHandler:
+        - use **find index** to get books by id
+        - use **splice** to delete data by id
+
+### Step 6: Query Parameter (?name) in GET All Data
+Query parameter is request url for spesific request, so the data will be filtered based on the request. 
+
+Example: dicoding.com/academy?name=Dhow
+
+- Project File:
+    - [handler.js](src/handler.js):
+        - Create variable from **request.query**
+        - Create condition for name
+        - get data by name using **.filter()**
+        - It's **has to non-case sensitive (ignore either lower/upper)**
+        - use **.toLowerCase()** to both of data for make the data can non-case sensitive
+        - use **.includes()** to create condition if **?name=Dicoding** is in the array books name **kelas dicoding/Dicoding jobs**  
+    - [routes.js](src/routes.js):
+        - Change path from **'/books' to '/{books?}'**
+
+### Step 7: Query Parameter (?reading) in GET All Data
+- Project File:
+    - [handler.js](src/handler.js):
+        - create condition for reading
+        - use .filter() and !!Number to filter data by the condition
+
+    **NOTE:**
+    > Boolean() will convert all number **exclude 0/false** is true. Even tho it's string
+
+    > !!Number will convert all falsy to false and truthy to true
+
+    Example: Boolena('0') -> true, !!Number('0') -> false
+
+### Step 7: Query Parameter (?finished) in GET All Data
+- Project File:
+    - [handler.js](src/handler.js):
+        - create condition for finished
+        - use .filter() and !!Number to filter data by the condition
+        
+    **NOTE:**
+    Same note as ?reading
