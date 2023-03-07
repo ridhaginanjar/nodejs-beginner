@@ -103,12 +103,15 @@ const getAllBooksHandler = (request, h) => {
 
   let filteredBooks = books;
 
-  if (name !== undefined) {
-    filteredBooks = books.filter((book) => book.name.toLowerCase()
-      .includes(name.toLowerCase()));
+  if (name) {
+    // eslint-disable-next-line max-len
+    filteredBooks = books.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
   }
-  if (reading !== undefined) {
-    filteredBooks = books.filter((book) => Boolean(book.reading));
+  if (reading) {
+    filteredBooks = books.filter((book) => book.reading === !!Number(reading));
+  }
+  if (finished) {
+    filteredBooks = books.filter((book) => book.finished === !!Number(finished));
   }
 
   const response = h.response({
