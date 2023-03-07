@@ -101,23 +101,23 @@ const getAllBooksHandler = (request, h) => {
     finished,
   } = request.query;
 
-  let filteredBooks = books;
+  let booksFilter = books;
 
   if (name) {
     // eslint-disable-next-line max-len
-    filteredBooks = books.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
+    booksFilter = books.filter((book) => book.name.toLowerCase().includes(name.toLowerCase()));
   }
   if (reading) {
-    filteredBooks = books.filter((book) => book.reading === !!Number(reading));
+    booksFilter = books.filter((book) => book.reading === !!Number(reading));
   }
   if (finished) {
-    filteredBooks = books.filter((book) => book.finished === !!Number(finished));
+    booksFilter = books.filter((book) => book.finished === !!Number(finished));
   }
 
   const response = h.response({
     status: 'success',
     data: {
-      books: filteredBooks.map((book) => ({
+      books: booksFilter.map((book) => ({
         id: book.id,
         name: book.name,
         publisher: book.publisher,
